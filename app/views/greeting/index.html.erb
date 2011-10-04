@@ -1,3 +1,67 @@
+<style type="text/css">
+table {
+	border-collapse:collapse;
+	}
+
+table,th, td {
+	border: 1px solid #9A170F;
+	}
+
+th {
+	background-color: #9A170F;
+	color: #ffffff;
+	text-align: left;
+	padding: 5px 10px 5px 10px;
+	}
+
+td {
+	vertical-align:top;
+	}
+
+tr:nth-child(odd) {
+	background-color:#ffffff !important;
+
+	}
+tr:nth-child(even) {
+	background-color:#eebbbb;
+	}
+</style>
+
 <h1><%= @welcome_message %></h1>
 <h2>Greeting#index</h2>
 <p>Find me in app/views/greeting/index.html.erb</p>
+
+<h1>Greeting#index: <%= @welcome_message %></h1>
+<p>Find me in app/views/greeting/index.html.erb</p>
+
+<h1>Simple <strong>Expressions</strong></h1>
+<p>Tommy is <%= @age %> years old.</p>
+
+
+<h1>Iteration using <i>Scriptlets</i></h1>
+<% for i in 1..5 %>
+  <p>Heading Number <%= i %> </p>
+<% end %>
+
+<h1><strong>Simple Table</strong></h1>
+
+<table>
+  <tr>
+    <% @table["headings"].each do |head| %>
+      <th align="center">
+        <%= head %>
+      </th>
+      <% end %>
+  </tr>
+
+  <% @table["body"].each do |row| %>
+    <tr>
+      <% row.each do |col| %>
+        <td align="center">
+          <%= col %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+
+  </table>
